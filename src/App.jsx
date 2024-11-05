@@ -1,8 +1,17 @@
-import { Button } from './components/Button/Button';
+import { useState } from "react"
+import { Button } from "./components/Button/Button"
+
 function App() {
+	const [count, setCount] = useState(0)
+
+	const handelClick = () => {
+		setCount(prev => prev + 1)
+	}
+
   return (
     <>
-      <Button label={'Value'}/>
+			{count}
+			<Button label={'Value'} onClick={handelClick}/>
     </>
   )
 }
